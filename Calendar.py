@@ -28,6 +28,7 @@ class Calendar:
         return creds
 
     def events(self, dateRange):
+        self.creds = self.getCreds()
         events = self.service.events()
         events_result = events.list(calendarId='primary',
                                     timeMin=dateRange[0],
